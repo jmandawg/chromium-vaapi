@@ -20,22 +20,23 @@ url="https://www.chromium.org/Home"
 license=('BSD')
 depends=('gtk3' 'nss' 'alsa-lib' 'xdg-utils' 'libxss' 'libcups' 'libgcrypt'
          'ttf-liberation' 'systemd' 'dbus' 'libpulse' 'pciutils' 'json-glib'
+         'jack' 'ffmpeg' 'flac' 'fontconfig' 'freetype2' 'harfbuzz' 'icu' 'libjpeg' 'libpng' 'libvpx' 'libwebp' 'libxml2' 'libxslt' 'opus' 're2' 'snappy' 'minizip'
          'desktop-file-utils' 'hicolor-icon-theme')
 makedepends=('python' 'python2' 'gperf' 'mesa' 'ninja' 'nodejs' 'git' 'libva'
-             'libpipewire02' 'clang' 'lld' 'gn' 'java-runtime-headless'
+             'libpipewire02' 'clang' 'lld' 'gn' 'jre-openjdk-headless'
              'python2-setuptools')
-optdepends=('pepper-flash: support for Flash content'
-            'libpipewire02: WebRTC desktop sharing under Wayland'
-            'libva: hardware-accelerated video decode [experimental]'
-            'kdialog: needed for file dialogs in KDE'
-            'org.freedesktop.secrets: password storage backend on GNOME / Xfce'
-            'kwallet: for storing passwords in KWallet on KDE desktops')
+#optdepends=('pepper-flash: support for Flash content'
+#            'libpipewire02: WebRTC desktop sharing under Wayland'
+#            'libva: hardware-accelerated video decode [experimental]'
+#            'kdialog: needed for file dialogs in KDE'
+#            'org.freedesktop.secrets: password storage backend on GNOME / Xfce'
+#            'kwallet: for storing passwords in KWallet on KDE desktops')
 provides=('chromium')
 conflicts=('chromium')
 install=chromium.install
-source=(https://commondatastorage.googleapis.com/chromium-browser-official/chromium-$pkgver.tar.xz
-        chromium-launcher-$_launcher_ver.tar.gz::https://github.com/foutrelis/chromium-launcher/archive/v$_launcher_ver.tar.gz
-        https://github.com/stha09/chromium-patches/releases/download/chromium-${pkgver%%.*}-patchset-$_gcc_patchset/chromium-${pkgver%%.*}-patchset-$_gcc_patchset.tar.xz
+source=(chromium-$pkgver.tar.xz
+        chromium-launcher-$_launcher_ver.tar.gz
+        chromium-${pkgver%%.*}-patchset-$_gcc_patchset.tar.xz
         remove-NotifyError-calls-and-just-send-a-normal-message.patch
         avoid-calling-DeleteForCurrentDocument-from-destructor.patch
         force-mp3-files-to-have-a-start-time-of-zero.patch
@@ -80,7 +81,7 @@ declare -gA _system_libs=(
 _unwanted_bundled_libs=(
   $(printf "%s\n" ${!_system_libs[@]} | sed 's/^libjpeg$/&_turbo/')
 )
-depends+=(${_system_libs[@]})
+#depends+=(${_system_libs[@]})
 
 # Google API keys (see https://www.chromium.org/developers/how-tos/api-keys)
 # Note: These are for Arch Linux use ONLY. For your own distribution, please

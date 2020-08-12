@@ -1,0 +1,19 @@
+<services>
+  <service name="download_url">
+     <param name="host">commondatastorage.googleapis.com</param>
+     <param name="protocol">https</param>
+     <param name="path">/chromium-browser-official/chromium-84.0.4147.125.tar.xz</param>
+   </service>
+   <service name="download_url">
+     <param name="host">github.com</param>
+     <param name="protocol">https</param>
+     <param name="path">/foutrelis/chromium-launcher/archive/v6.tar.gz</param>
+     <param name="filename">chromium-launcher-6.tar.gz</param>
+  </service>
+   <service name="download_url">
+     <param name="host">github.com</param>
+     <param name="protocol">https</param>
+     <param name="path">/stha09/chromium-patches/releases/download/chromium-84-patchset-3/chromium-84-patchset-3.tar.xz</param>
+     <param name="filename">chromium-84-patchset-3.tar.xz</param>
+  </service>
+</services>
