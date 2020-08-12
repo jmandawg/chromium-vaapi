@@ -1,0 +1,27 @@
+<services>
+  <!--
+  <service name="obs_scm">
+    <param name="scm">git</param>
+    <param name="url">https://github.com/jmandawg/chromium-vaapi.git</param>
+    <param name="revision">obs</param>
+    <param name="extract">*</param>
+  </service>
+  -->
+  <service name="download_url">
+     <param name="host">commondatastorage.googleapis.com</param>
+     <param name="protocol">https</param>
+     <param name="path">/chromium-browser-official/chromium-${pkgver}.tar.xz</param>
+   </service>
+   <service name="download_url">
+     <param name="host">github.com</param>
+     <param name="protocol">https</param>
+     <param name="path">/foutrelis/chromium-launcher/archive/v${_launcher_ver}.tar.gz</param>
+     <param name="filename">chromium-launcher-${_launcher_ver}.tar.gz</param>
+  </service>
+   <service name="download_url">
+     <param name="host">github.com</param>
+     <param name="protocol">https</param>
+     <param name="path">/stha09/chromium-patches/releases/download/chromium-${_chrome_base_ver}-patchset-3/chromium-${_chrome_base_ver}-patchset-${_gcc_patchset}.tar.xz</param>
+     <param name="filename">chromium-${_chrome_base_ver}-patchset-${_gcc_patchset}.tar.xz</param>
+  </service>
+</services>
