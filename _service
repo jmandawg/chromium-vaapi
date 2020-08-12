@@ -1,4 +1,12 @@
 <services>
+  <!--
+  <service name="obs_scm">
+    <param name="scm">git</param>
+    <param name="url">https://github.com/jmandawg/chromium-vaapi.git</param>
+    <param name="revision">obs</param>
+    <param name="extract">*</param>
+  </service>
+  -->
   <service name="download_url">
      <param name="host">commondatastorage.googleapis.com</param>
      <param name="protocol">https</param>
