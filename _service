@@ -10,7 +10,7 @@
   <service name="download_url">
      <param name="host">commondatastorage.googleapis.com</param>
      <param name="protocol">https</param>
-     <param name="path">/chromium-browser-official/chromium-84.0.4147.125.tar.xz</param>
+     <param name="path">/chromium-browser-official/chromium-84.0.4147.135.tar.xz</param>
    </service>
    <service name="download_url">
      <param name="host">github.com</param>
